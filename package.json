@@ -1,0 +1,40 @@
+{
+  "name": "@shlomiatar/nano-jwt",
+  "version": "0.0.1",
+  "description": "A tiny, minimalistic HS256/HS512 jwt verifier using WebCryptoAPIs (for browser/bun/cloudflare)",
+  "keywords": ["jwt", "verify", "hs256", "hs512", "webcrypto", "browser", "bun", "cloudflare"],
+  "author": "Shlomi Atar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shlomiatar/nano-jwt.git"
+  },
+  "homepage": "https://github.com/shlomiatar/nano-jwt",
+  "bugs": {
+    "url": "https://github.com/shlomiatar/nano-jwt/issues"
+  },
+
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "tsconfig.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "bunup": "^0.1.36"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "bun test",
+    "build": "bunup src/index.ts --format esm --dts",
+    "build:min": "bunup src/index.ts --clean --format  esm  --out-dir dist/min --dts --minify"
+  }
+}
